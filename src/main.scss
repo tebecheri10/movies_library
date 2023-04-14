@@ -1,0 +1,11 @@
+@use './styles/searchBar/searchBar' as searchBar;
+@use './styles/movies/movieList' as movieList;
+@use './styles/movies/movieCard' as movieCard;
+@use './styles/app' as app;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}

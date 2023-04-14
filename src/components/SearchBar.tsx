@@ -12,15 +12,15 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
-      <h2>Search content</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="searchBar_container">
+      <form className="searchBar_form" onSubmit={handleSubmit}>
         <input 
+         className="searchBar_textInput"
          type="text"
          value={moviesState.movieName}
          onChange={(e)=>dispatch(setMovieName({value: e.target.value}))}
          />
-        <button type="submit" value='searchMovie'>Search Movie</button>
+        <button className="searchBar_submitButton" type="submit" value='searchMovie'>Search Movie</button>
       </form>
     </div>
   );

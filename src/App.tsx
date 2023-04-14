@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Movies from './features/movies/MoviesList';
 import SearchBar from './components/SearchBar';
 import MovieDetail from './views/MovieDetail';
-import './App.scss';
+import './main.scss';
 
 function App() {
   return (

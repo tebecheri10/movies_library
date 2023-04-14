@@ -1,0 +1,11 @@
+@use "../config/variables" as var;
+
+.movieList_container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px 8px;
+    background-color: var.$main-color;
+}
