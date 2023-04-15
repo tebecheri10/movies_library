@@ -1,11 +1,21 @@
 @use './styles/searchBar/searchBar' as searchBar;
 @use './styles/movies/movieList' as movieList;
 @use './styles/movies/movieCard' as movieCard;
+@use './styles/movieDetail/movieDetail' as movieDetail;
+@use './styles/movieDetail/banner' as banner;
 @use './styles/app' as app;
+@use './styles/config/variables' as var;
+
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+html {
+    font-size: 8px;
+  }
 
 *{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     box-sizing: border-box;
+    color: var.$font-color;
 }

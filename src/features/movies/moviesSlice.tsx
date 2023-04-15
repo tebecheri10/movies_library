@@ -5,12 +5,14 @@ export interface MoviesState {
   movieName: string
   completeList: any
   movieExtraData: any
+  movieEmbeddedData: any
 }
 
 const initialState: MoviesState = {
   movieName: "",
   completeList: [],
-  movieExtraData: []
+  movieExtraData: [],
+  movieEmbeddedData: null
 };
 
 export const getMovies = createAsyncThunk('movies/getMovies', async (movieName: string | undefined) => {
@@ -25,7 +27,7 @@ export const getMovies = createAsyncThunk('movies/getMovies', async (movieName: 
 
 export const getMovieExtraData = createAsyncThunk('movies/getMovieExtraData', async (movieId: string | undefined) => {
   try {
-    const url = `https://api.tvmaze.com/shows/${movieId}?embed[]=episodes&embed[]=cast`;
+    const url = `https://api.tvmaze.com/shows/${movieId}?embed[]=episodes&embed[]=cast&embed[]=images`;
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
@@ -47,6 +49,8 @@ export const moviesSlice = createSlice({
     });
     builder.addCase(getMovieExtraData.fulfilled, (state, action) => {
       state.movieExtraData = action.payload;
+      state.movieEmbeddedData = action.payload._embedded;
+
     });
   },
 });
