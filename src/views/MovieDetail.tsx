@@ -29,6 +29,8 @@ const MovieDetail = () => {
     getMovieDetails();
   }, [getMovieDetails]);
 
+  console.log("movie dasta", moviesState.movieExtraData);
+
   return (
     <div className="movieDetail_container">
       {spinnerState.showSpinner ? (
@@ -77,10 +79,22 @@ const MovieDetail = () => {
                   </h2>
                   <p className="movieDetail_summary-extraInfo">
                     {moviesState?.movieExtraData?.genres &&
-                      moviesState.movieExtraData.genres.length > 0 && (
+                      moviesState.movieExtraData?.genres?.length > 0 && (
                         <>
-                          {moviesState.movieExtraData.genres[0]}{" "}
-                          {moviesState?.movieExtraData?.network?.country?.name}
+                          <div className="movieDetail_genre-row">
+                            <span className="movieDetail_genre"><strong>Genres:</strong></span>
+                            <p className="movieDetail_genre">
+                            {moviesState?.movieExtraData?.genres.map(
+                              (genre: any) => (` ${genre}`)
+                            ).join(", ")}</p>{" "}
+                          </div>
+                          <div className="movieDetail_country-row">
+                            <span className="movieDetail_country"><strong>Country:</strong></span>
+                            <p className="movieDetail_country">
+                              {moviesState?.movieExtraData?.network?.country?.name?.length > 0 ?
+                                moviesState?.movieExtraData?.network?.country?.name : " - "}
+                              </p>
+                          </div>
                         </>
                       )}
                   </p>

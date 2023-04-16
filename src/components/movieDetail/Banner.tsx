@@ -39,7 +39,7 @@ const Banner: FC<BannerProps> = ({ bannerImages }) => {
       {bannerImages?.length > 0 ?
        (<Slider {...settings}>
           {bannerImages.map((image: any) => (
-            <img  className="banner_image" src={image?.resolutions?.original?.url} />
+            <img key={bannerImages?.id} className="banner_image" src={image?.resolutions?.original?.url} />
           ))}
         </Slider>) : 
         (<img className="banner_placeholder"src={bannerPlaceholder} alt="banner placeholder" />)}

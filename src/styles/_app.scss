@@ -1,3 +1,6 @@
+@use '../styles/config/variables' as var;
+
 .App{
-    padding-top: 60px;
+    background-color:var.$main-color ;
+    padding-top: 70px;
 }

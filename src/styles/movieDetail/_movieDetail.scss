@@ -14,7 +14,7 @@
     display: flex;
     height: auto;
     @media (min-width: var.$desktop){
-      display: none;
+      position: absolute;
     }
     .movieDetail_generalInfo-schedule {
       width: 50%;
@@ -85,6 +85,34 @@
             font-size: 2.5rem;
             line-height: 28px;
           }
+          .movieDetail_genre-row{
+            display: flex;
+            font-size: 1.3rem;
+            @media (min-width: var.$desktop) {
+              font-size: 2rem;
+            }
+            .movieDetail_genre{
+              padding: 2px;
+              color: var.$font-color;
+              @media (min-width: var.$desktop) {
+                color: var.$font-color-white;
+              }
+            }
+          }
+          .movieDetail_country-row{
+            display: flex;
+            font-size: 1.3rem;
+            @media (min-width: var.$desktop) {
+              font-size: 2rem;
+            }
+            .movieDetail_country{
+              padding: 2px;
+              color: var.$font-color;
+              @media (min-width: var.$desktop) {
+                color: var.$font-color-white;
+              }
+            }
+          }
         }
       }
       .movieDetail_summary-textContainer {
@@ -104,5 +132,8 @@
   //cast table
   .movieDetail_cast-container {
     padding: 0 30px;
+    @media (min-width: var.$desktop){
+      margin-top: 160px;
+    }
   }
 }

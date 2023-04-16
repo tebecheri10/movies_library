@@ -2,10 +2,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMovies, setMovieName } from "../features/movies/moviesSlice";
 import { setSpinnerValue} from "../features/spinner/spinnerSlice";
+import { Link } from 'react-router-dom'
 
 import type { RootState } from "../app/store";
 
 import searchIcon from '../assets/searchIcon.svg'
+import movieLibraryIcon from '../assets/movie-library-icon.jpg'
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -29,6 +31,10 @@ const SearchBar = () => {
 
   return (
     <div className="searchBar_container">
+      <div className="serachBar_wrapper">
+      <Link to="/">
+        <img className="searchBar_icon" src={movieLibraryIcon} alt="serach icon" />
+      </Link>
       <form className="searchBar_form" onSubmit={handleSubmit}>
         <input 
          className="searchBar_textInput"
@@ -39,6 +45,7 @@ const SearchBar = () => {
          />
         <button className="searchBar_submitButton" type="submit" value='searchMovie'><img src={searchIcon} alt="search icon" className="searchBar_searchIcon" /></button>
       </form>
+      </div>
     </div>
   );
 };

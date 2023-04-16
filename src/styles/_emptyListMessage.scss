@@ -1,12 +1,18 @@
 @use "./config/variables" as var;
 
 .emptyLIstMessage_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 75vh;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 75vh;
+  text-align: center;
+  width: 100%;
+  .emptyLIstMessage_image {
     width: 100%;
+    max-width: 100px;
+    margin: 25px;
+  }
   .emptyLIstMessage_text {
     font-size: 3rem;
     padding: 0 8px;
