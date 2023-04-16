@@ -1,15 +1,16 @@
-import React, { FC, useMemo } from "react";
-import { useSelector } from "react-redux";
-import type { RootState } from "../../app/store";
-
+import { FC } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
+import bannerPlaceholder from "../../assets/banner-placeholder.png";
+import arrowBack from "../../assets/arrow-back-icon.png";
 
 interface BannerProps {
   bannerImages: any;
 }
 
+//slider config
 const settings = {
   dots: false,
   fade: true,
@@ -20,22 +21,28 @@ const settings = {
   autoplaySpeed: 6000,
   slidesToShow: 1,
   slidesToScroll: 1,
-  adaptiveHeight: false
+  adaptiveHeight: false,
 };
 
 const Banner: FC<BannerProps> = ({ bannerImages }) => {
-  const moviesState = useSelector((state: RootState) => state.movies);
 
-  console.log("banner images", bannerImages)
-  console.log("movie data", moviesState?.movieExtraData?.image?.medium)
-   
   return (
     <div className="banner_Container">
-      <Slider {...settings}>
-           {bannerImages &&
-            bannerImages.map((image:any)=> <img src={image?.resolutions?.original?.url}/> )
-          } 
-      </Slider>
+      <div className="banner_overlay"></div>
+      <Link to="/">
+        <img
+          className="banner_goBackArrow"
+          src={arrowBack}
+          alt="go back arrow"
+        />
+      </Link>
+      {bannerImages?.length > 0 ?
+       (<Slider {...settings}>
+          {bannerImages.map((image: any) => (
+            <img  className="banner_image" src={image?.resolutions?.original?.url} />
+          ))}
+        </Slider>) : 
+        (<img className="banner_placeholder"src={bannerPlaceholder} alt="banner placeholder" />)}
     </div>
   );
 };

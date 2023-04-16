@@ -1,0 +1,15 @@
+@use "./config/variables" as var;
+
+.emptyLIstMessage_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    text-align: center;
+    width: 100%;
+  .emptyLIstMessage_text {
+    font-size: 3rem;
+    padding: 0 8px;
+    color: var.$tertiary-color;
+  }
+}

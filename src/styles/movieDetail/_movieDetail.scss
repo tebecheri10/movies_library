@@ -1,54 +1,108 @@
 @use "../config/variables" as var;
 
-.movieDetail_container{
-    min-height: 100vh;
-    background-color: var.$main-color;
-    .movieDetail_generalInfo-container{
-        width: 100%;
-        display: flex;
-        height: auto;
-        .movieDetail_generalInfo-schedule{
-            width: 50%;
-            border: 1px solid var.$secondary-color;
-            aspect-ratio: 2/1;
-            min-height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5rem;
-        }
-        .movieDetail_generalInfo-rating{
-            width: 50%;
-            border: 1px solid var.$secondary-color;
-            aspect-ratio: 2/1;
-            min-height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5rem;
+.movieDetail_container {
+  min-height: 100vh;
+  background-color: var.$main-color;
+  .movieDetail_spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .movieDetail_generalInfo-container {
+    width: 100%;
+    display: flex;
+    height: auto;
+    @media (min-width: var.$desktop){
+      display: none;
+    }
+    .movieDetail_generalInfo-schedule {
+      width: 50%;
+      border: 1px solid var.$secondary-color;
+      aspect-ratio: 2/1;
+      min-height: 60px;
+      max-height: 130px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.8rem;
+      flex-direction: column;
+      .movieDetail_generalInfo-calendarIcon {
+        width: 25px;
+        height: 25px;
+        margin-bottom: 5px;
+        filter: invert(84%) sepia(10%) saturate(7%) hue-rotate(354deg)
+          brightness(50%) contrast(87%);
+      }
+    }
+    .movieDetail_generalInfo-rating {
+      width: 50%;
+      border: 1px solid var.$secondary-color;
+      aspect-ratio: 2/1;
+      min-height: 60px;
+      max-height: 130px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.8rem;
 
-        }
+      .movieDetail_generalInfo-ratingIcon {
+        width: 30px;
+        height: 25px;
+        margin-bottom: 5px;
+      }
     }
-    .movieDetail_summary-container{
-        width: 100%;
-        padding: 30px 16px;
-        .movieDetail_summary-header{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 0px 0 15px;
-            .movieDetail_summary-title{
-                font-size: 3rem;
-            }
-            .movieDetail_summary-extraInfo{
-                font-size: 1.5rem;
-            }
-        }
-        .movieDetail_summary-textContainer{
-            .movieDetail_summary-text{
-                font-size: 1.5rem;
-                line-height: 20px;
-            }
-        }
+  }
+  .movieDetail_info-container{
+    @media (min-width: var.$desktop) {
+      position: relative;
     }
+    .movieDetail_summary-container {
+      width: 100%;
+      padding: 30px 30px;
+      @media (min-width: var.$desktop) {
+        position: absolute;
+        bottom: 0;
+        z-index: 50;
+      }
+      .movieDetail_summary-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px 0 15px;
+        .movieDetail_summary-title {
+          font-size: 3rem;
+          @media (min-width: var.$desktop) {
+            color: var.$font-color-white;
+            font-size: 6rem;
+          }
+        }
+        .movieDetail_summary-extraInfo {
+          font-size: 1.5rem;
+          @media (min-width: var.$desktop) {
+            color: var.$font-color-white;
+            font-size: 2.5rem;
+            line-height: 28px;
+          }
+        }
+      }
+      .movieDetail_summary-textContainer {
+        .movieDetail_summary-text {
+          font-size: 1.8rem;
+          line-height: 20px;
+          @media (min-width: var.$desktop) {
+            color: var.$font-color-white;
+            font-size: 2.5rem;
+            line-height: 28px;
+          }
+        }
+      }
+    }
+  }
+  
+  //cast table
+  .movieDetail_cast-container {
+    padding: 0 30px;
+  }
 }

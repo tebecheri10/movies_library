@@ -3,6 +3,9 @@
 @use './styles/movies/movieCard' as movieCard;
 @use './styles/movieDetail/movieDetail' as movieDetail;
 @use './styles/movieDetail/banner' as banner;
+@use './styles/movieDetail/castTable' as castTable;
+@use './styles/emptyListMessage' as emptyListMessage;
+@use './styles/spinner' as spinner;
 @use './styles/app' as app;
 @use './styles/config/variables' as var;
 

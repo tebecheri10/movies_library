@@ -6,7 +6,8 @@
     min-height: 100vh;
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 10px 8px;
+    padding: 10px 22px;
     background-color: var.$main-color;
 }

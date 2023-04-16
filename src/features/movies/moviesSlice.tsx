@@ -50,7 +50,6 @@ export const moviesSlice = createSlice({
     builder.addCase(getMovieExtraData.fulfilled, (state, action) => {
       state.movieExtraData = action.payload;
       state.movieEmbeddedData = action.payload._embedded;
-
     });
   },
 });

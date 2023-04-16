@@ -1,67 +1,105 @@
-import React, { useEffect, useCallback } from "react";
+import { useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMovieExtraData } from "../features/movies/moviesSlice";
+import { setSpinnerValue } from "../features/spinner/spinnerSlice";
 import { useParams } from "react-router-dom";
 import type { RootState } from "../app/store";
 
 import Banner from "../components/movieDetail/Banner";
+import CastTable from "../components/movieDetail/CastTable";
+import Spinner from "../components/Spinner";
+
+import calendarIcon from "../assets/calendar-icon.png";
+import imdbIcon from "../assets/imdb-icon.png";
 
 const MovieDetail = () => {
   const { id } = useParams();
 
   const dispatch = useDispatch();
   const moviesState = useSelector((state: RootState) => state.movies);
+  const spinnerState = useSelector((state: RootState) => state.spinner);
 
-  const getMovieDetails = useCallback(() => {
-    dispatch(getMovieExtraData(id) as any);
+  const getMovieDetails = useCallback(async () => {
+    dispatch(setSpinnerValue(true));
+    await dispatch(getMovieExtraData(id) as any);
+    dispatch(setSpinnerValue(false));
   }, [dispatch, id]);
 
   useEffect(() => {
     getMovieDetails();
   }, [getMovieDetails]);
 
-  console.log("moviedata", moviesState?.movieExtraData);
-
   return (
     <div className="movieDetail_container">
-      <Banner
-        bannerImages={moviesState?.movieEmbeddedData?.images.filter(
-          (image: any) => image.type == "background"
-        )}
-      />
-      {moviesState.movieExtraData && (
-        <div className="movieDetail_info-container">
-          <section className="movieDetail_generalInfo-container">
-            <div className="movieDetail_generalInfo-schedule">
-            {moviesState?.movieExtraData?.schedule?.days[0]}-{moviesState?.movieExtraData?.schedule?.time}
-            </div>
-            <div className="movieDetail_generalInfo-rating">
-              <p>{moviesState?.movieExtraData?.rating?.average}</p>
-            </div>
-          </section>
-
-          <section className="movieDetail_summary-container">
-            <div className="movieDetail_summary-header">
-              <h2 className="movieDetail_summary-title">
-                {moviesState?.movieExtraData?.name}
-              </h2>
-              <p className="movieDetail_summary-extraInfo">
-                {moviesState?.movieExtraData?.genres &&
-                  moviesState.movieExtraData.genres.length > 0 && (
-                    <>{moviesState.movieExtraData.genres[0]} - {moviesState?.movieExtraData?.network?.country?.name}</>
-                  )}
-              </p>
-            </div>
-            <div className="movieDetail_summary-textContainer">
-              <p className="movieDetail_summary-text">
-                {moviesState?.movieExtraData?.summary?.replace(
-                  /(<([^>]+)>)/gi,
-                  ""
-                )}
-              </p>
-            </div>
-          </section>
+      {spinnerState.showSpinner ? (
+        <div className="movieDetail_spinner-container">
+          <Spinner />
         </div>
+      ) : (
+        <>
+          <Banner
+            bannerImages={moviesState?.movieEmbeddedData?.images.filter(
+              (image: any) => image.type == "background"
+            )}
+          />
+          {moviesState.movieExtraData && (
+            <section className="movieDetail_info-container">
+              <div className="movieDetail_generalInfo-container">
+                <div className="movieDetail_generalInfo-schedule">
+                  <img
+                    className="movieDetail_generalInfo-calendarIcon"
+                    src={calendarIcon}
+                    alt="calendar icon"
+                  />
+                  {moviesState?.movieExtraData?.schedule?.days[0] &&
+                  moviesState?.movieExtraData?.schedule?.time
+                    ? `${moviesState?.movieExtraData?.schedule?.days[0]}
+                      ${moviesState?.movieExtraData?.schedule?.time}`
+                    : "No available data"}
+                </div>
+                <div className="movieDetail_generalInfo-rating">
+                  <img
+                    className="movieDetail_generalInfo-ratingIcon"
+                    src={imdbIcon}
+                    alt="rating icon"
+                  />
+                  <p>
+                    {moviesState?.movieExtraData?.rating?.average ||
+                      "no available data"}
+                  </p>
+                </div>
+              </div>
+
+              <div className="movieDetail_summary-container">
+                <div className="movieDetail_summary-header">
+                  <h2 className="movieDetail_summary-title">
+                    {moviesState?.movieExtraData?.name}
+                  </h2>
+                  <p className="movieDetail_summary-extraInfo">
+                    {moviesState?.movieExtraData?.genres &&
+                      moviesState.movieExtraData.genres.length > 0 && (
+                        <>
+                          {moviesState.movieExtraData.genres[0]}{" "}
+                          {moviesState?.movieExtraData?.network?.country?.name}
+                        </>
+                      )}
+                  </p>
+                </div>
+                <div className="movieDetail_summary-textContainer">
+                  <p className="movieDetail_summary-text">
+                    {moviesState?.movieExtraData?.summary?.replace(
+                      /(<([^>]+)>)/gi,
+                      ""
+                    )}
+                  </p>
+                </div>
+              </div>
+            </section>
+          )}
+          <section className="movieDetail_cast-container">
+            <CastTable castInfo={moviesState?.movieEmbeddedData?.cast} />
+          </section>
+        </>
       )}
     </div>
   );

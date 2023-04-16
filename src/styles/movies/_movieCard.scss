@@ -4,6 +4,17 @@
   width: 50%;
   min-height: 150px;
   padding: 2px 8px;
+  
+  @media (min-width:var.$tablet){
+    width: calc(100% / 3)
+  }
+  @media (min-width:var.$desktop){
+    width: calc(100% / 4 );
+    transition: 800ms;
+    &:hover{
+      transform: scale(1.03);
+    }
+  }
   .movieCard_link {
     text-decoration: none;
     color: var.$font-color;
