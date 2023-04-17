@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMovieExtraData } from "../features/movies/moviesSlice";
 import { setSpinnerValue } from "../features/spinner/spinnerSlice";
@@ -28,8 +28,6 @@ const MovieDetail = () => {
   useEffect(() => {
     getMovieDetails();
   }, [getMovieDetails]);
-
-  console.log("movie dasta", moviesState.movieExtraData);
 
   return (
     <div className="movieDetail_container">

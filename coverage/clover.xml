@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1681729746010" clover="3.2.0">
+  <project timestamp="1681729746010" name="All files">
+    <metrics statements="102" coveredstatements="85" conditionals="341" coveredconditionals="180" methods="29" coveredmethods="19" elements="472" coveredelements="284" complexity="0" loc="102" ncloc="102" packages="5" files="9" classes="9"/>
+    <package name="components">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="EmptyListMessage.tsx" path="C:\Users\dani_\Desktop\Dani\desarrollo\project\chili_test\theMoviesLibrary\src\components\EmptyListMessage.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+      <file name="Spinner.tsx" path="C:\Users\dani_\Desktop\Dani\desarrollo\project\chili_test\theMoviesLibrary\src\components\Spinner.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.movieDetail">
+      <metrics statements="18" coveredstatements="17" conditionals="78" coveredconditionals="22" methods="4" coveredmethods="3"/>
+      <file name="Banner.tsx" path="C:\Users\dani_\Desktop\Dani\desarrollo\project\chili_test\theMoviesLibrary\src\components\movieDetail\Banner.tsx">
+        <metrics statements="12" coveredstatements="12" conditionals="22" coveredconditionals="18" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+      </file>
+      <file name="CastTable.tsx" path="C:\Users\dani_\Desktop\Dani\desarrollo\project\chili_test\theMoviesLibrary\src\components\movieDetail\CastTable.tsx">
+        <metrics statements="6" coveredstatements="5" conditionals="56" coveredconditionals="4" methods="2" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="42" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="features.movies">
+      <metrics statements="44" coveredstatements="31" conditionals="92" coveredconditionals="70" methods="14" coveredmethods="7"/>
+      <file name="MovieCard.tsx" path="C:\Users\dani_\Desktop\Dani\desarrollo\project\chili_test\theMoviesLibrary\src\features\movies\MovieCard.tsx">
+        <metrics statements="9" coveredstatements="8" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+      </file>
+      <file name="MoviesList.tsx" path="C:\Users\dani_\Desktop\Dani\desarrollo\project\chili_test\theMoviesLibrary\src\features\movies\MoviesList.tsx">
+        <metrics statements="11" coveredstatements="11" conditionals="88" coveredconditionals="67" methods="4" coveredmethods="4"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="19" count="2" type="cond" truecount="6" falsecount="2"/>
+        <line num="35" count="1" type="stmt"/>
+      </file>
+      <file name="moviesSlice.tsx" path="C:\Users\dani_\Desktop\Dani\desarrollo\project\chili_test\theMoviesLibrary\src\features\movies\moviesSlice.tsx">
+        <metrics statements="24" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="features.spinner">
+      <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="spinnerSlice.tsx" path="C:\Users\dani_\Desktop\Dani\desarrollo\project\chili_test\theMoviesLibrary\src\features\spinner\spinnerSlice.tsx">
+        <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="views">
+      <metrics statements="25" coveredstatements="23" conditionals="171" coveredconditionals="88" methods="8" coveredmethods="7"/>
+      <file name="MovieDetail.tsx" path="C:\Users\dani_\Desktop\Dani\desarrollo\project\chili_test\theMoviesLibrary\src\views\MovieDetail.tsx">
+        <metrics statements="25" coveredstatements="23" conditionals="171" coveredconditionals="88" methods="8" coveredmethods="7"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="120" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

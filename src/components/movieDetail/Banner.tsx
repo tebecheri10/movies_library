@@ -1,6 +1,6 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import bannerPlaceholder from "../../assets/banner-placeholder.png";
@@ -39,7 +39,7 @@ const Banner: FC<BannerProps> = ({ bannerImages }) => {
       {bannerImages?.length > 0 ?
        (<Slider {...settings}>
           {bannerImages.map((image: any) => (
-            <img key={bannerImages?.id} className="banner_image" src={image?.resolutions?.original?.url} />
+            <img key={bannerImages?.id} className="banner_image" src={image?.resolutions?.original?.url} alt="movie banner"/>
           ))}
         </Slider>) : 
         (<img className="banner_placeholder"src={bannerPlaceholder} alt="banner placeholder" />)}

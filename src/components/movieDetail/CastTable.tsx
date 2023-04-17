@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React,  { FC } from "react";
 import avatarPlaceholder from '../../assets/avatar-placeholder.webp'
 
 interface CastTableProps {
