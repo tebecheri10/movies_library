@@ -48,9 +48,7 @@ const MovieCard: FC<MovieCardProps> = ({
           <div className="moviCard_infoContainer">
             <p className="movieCard_showName">{showName}</p>
             <p className="movieCard_extraInfo">
-              {`${genres[0]} - `}
-              {`${country} - `}
-              {premiered}
+              {(`${genres[0] != undefined ? genres[0] : ""} ${country != undefined ? country : ""} ${premiered != undefined ? premiered: ""}`).split(" ").join("-")}
             </p>
           </div>
         </Link>
