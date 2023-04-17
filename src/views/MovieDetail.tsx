@@ -33,8 +33,6 @@ const MovieDetail = () => {
     getMovieDetails();
   }, [getMovieDetails]);
 
-  console.log("movie embeed", moviesState.movieEmbeddedData)
-
   return (
     <div className="movieDetail_container">
       {spinnerState.showSpinner ? (

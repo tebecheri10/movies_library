@@ -11,8 +11,6 @@ const MoviesList: FC = () => {
   const moviesState = useSelector((state: RootState) => state.movies);
   const spinnerState = useSelector((state: RootState) => state.spinner);
 
-  console.log("movie list", moviesState.completeList)
-
   return (
     <div className="movieList_container">
       {spinnerState.showSpinner ? (
