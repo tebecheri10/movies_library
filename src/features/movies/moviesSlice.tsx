@@ -1,17 +1,22 @@
 import  React, { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { CompleteListType } from '../../types/completeListTypes'
+import { ExtraDataType } from '../../types/movieExtraDataTypes'
+import { movieEmbeddedDataType } from '../../types/movieEmbeddedData'
+
+
 
 export interface MoviesState {
   movieName: string
-  completeList: any
-  movieExtraData: any
-  movieEmbeddedData: any
+  completeList: CompleteListType[]
+  movieExtraData: ExtraDataType
+  movieEmbeddedData: movieEmbeddedDataType
 }
 
 const initialState: MoviesState = {
   movieName: "",
   completeList: [],
-  movieExtraData: [],
+  movieExtraData: null,
   movieEmbeddedData: null
 };
 

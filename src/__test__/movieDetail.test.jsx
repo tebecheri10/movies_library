@@ -12,8 +12,10 @@ import thunk from 'redux-thunk';
 
 jest.mock('../assets/avatar-placeholder.webp', () => 'avatar-placeholder');
 
+//mock for async func
 const mockStore = configureStore([thunk]);
 
+//render all components with a redux wrapper to provide context
 const renderWithRedux = (component, store) => {
   return {
     ...render(<Provider store={store}><MemoryRouter>{component}</MemoryRouter></Provider>),

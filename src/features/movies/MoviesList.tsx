@@ -6,8 +6,12 @@ import Spinner from "../../components/Spinner";
 import type { RootState } from "../../app/store";
 
 const MoviesList: FC = () => {
+  
+  //Context
   const moviesState = useSelector((state: RootState) => state.movies);
   const spinnerState = useSelector((state: RootState) => state.spinner);
+
+  console.log("movie list", moviesState.completeList)
 
   return (
     <div className="movieList_container">

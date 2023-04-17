@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import cinemaIcon from '../assets/cinema-icon.jpg'
 import cinemaImage from '../assets/cinema-image.png'
 
 

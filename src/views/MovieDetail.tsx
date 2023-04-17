@@ -13,21 +13,27 @@ import calendarIcon from "../assets/calendar-icon.png";
 import imdbIcon from "../assets/imdb-icon.png";
 
 const MovieDetail = () => {
+  // ID in url , used to get the movie data.
   const { id } = useParams();
 
+  //Context
   const dispatch = useDispatch();
   const moviesState = useSelector((state: RootState) => state.movies);
   const spinnerState = useSelector((state: RootState) => state.spinner);
 
   const getMovieDetails = useCallback(async () => {
+    //show spinner
     dispatch(setSpinnerValue(true));
     await dispatch(getMovieExtraData(id) as any);
+     //when the movies data is available , set spinner to false
     dispatch(setSpinnerValue(false));
   }, [dispatch, id]);
 
   useEffect(() => {
     getMovieDetails();
   }, [getMovieDetails]);
+
+  console.log("movie embeed", moviesState.movieEmbeddedData)
 
   return (
     <div className="movieDetail_container">

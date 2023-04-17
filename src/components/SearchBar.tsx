@@ -11,6 +11,8 @@ import searchIcon from '../assets/searchIcon.svg'
 import movieLibraryIcon from '../assets/movie-library-icon.jpg'
 
 const SearchBar = () => {
+  
+  //Context
   const dispatch = useDispatch();
   const moviesState = useSelector((state: RootState) => state.movies);
   const navigate = useNavigate();
@@ -18,12 +20,12 @@ const SearchBar = () => {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
     if(moviesState.movieName !== ""){
+      //after a search , always return to the movieList view
       navigate("/")
-      
+       //show spinner
       dispatch(setSpinnerValue(true))
-
       await dispatch(getMovies(moviesState.movieName) as any);
-
+       //when the movies data is available , set spinner to false
       dispatch(setSpinnerValue(false))
     }else{
       return
