@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "module": "es6",
+    "moduleResolution": "node"
   },
   "moduleFileExtensions": ["js", "jsx", "ts", "tsx", "json", "node"]
 }
