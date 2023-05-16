@@ -1,5 +1,5 @@
 
-**Movie Library test per CHILI** :clapper: :film_strip:
+**Movie Library** :clapper: :film_strip:
 
 L'App cerca informazioni su film e spettacoli, utilizzando l'API di https://www.tvmaze.com
 Dopo aver cliccato su alcuni dei risultati, possono vedere dettagli più specifici.
