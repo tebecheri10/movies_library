@@ -2,9 +2,9 @@ import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMovies, setMovieName } from "../features/movies/moviesSlice";
-import { setSpinnerValue} from "../features/spinner/spinnerSlice";
+import { showSpinner} from "../features/spinner/spinnerSlice";
 import { Link } from 'react-router-dom'
-
+import { isValidInput } from '../utils/searchUtils';
 import type { RootState } from "../app/store";
 
 import searchIcon from '../assets/searchIcon.svg'
@@ -19,16 +19,14 @@ const SearchBar = () => {
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    if(moviesState.movieName !== ""){
-      //after a search , always return to the movieList view
+
+    let movieName = moviesState.movieName
+    
+    if(isValidInput(movieName)){
       navigate("/")
-       //show spinner
-      dispatch(setSpinnerValue(true))
-      await dispatch(getMovies(moviesState.movieName) as any);
-       //when the movies data is available , set spinner to false
-      dispatch(setSpinnerValue(false))
-    }else{
-      return
+      dispatch(showSpinner(true))
+      await dispatch(getMovies(movieName) as any);
+      dispatch(showSpinner(false))
     }
   };
 

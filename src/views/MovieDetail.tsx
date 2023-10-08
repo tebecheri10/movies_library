@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMovieExtraData } from "../features/movies/moviesSlice";
-import { setSpinnerValue } from "../features/spinner/spinnerSlice";
+import { showSpinner } from "../features/spinner/spinnerSlice";
 import { useParams } from "react-router-dom";
 import type { RootState } from "../app/store";
 
@@ -14,20 +14,18 @@ import imdbIcon from "../assets/imdb-icon.png";
 
 const MovieDetail = () => {
   // ID in url , used to get the movie data.
-  const { id } = useParams();
+  const { id:movieId } = useParams();
 
   //Context
   const dispatch = useDispatch();
   const moviesState = useSelector((state: RootState) => state.movies);
-  const spinnerState = useSelector((state: RootState) => state.spinner);
+  const spinner = useSelector((state: RootState) => state.spinner);
 
   const getMovieDetails = useCallback(async () => {
-    //show spinner
-    dispatch(setSpinnerValue(true));
-    await dispatch(getMovieExtraData(id) as any);
-     //when the movies data is available , set spinner to false
-    dispatch(setSpinnerValue(false));
-  }, [dispatch, id]);
+    dispatch(showSpinner(true));
+    await dispatch(getMovieExtraData(movieId) as any);
+    dispatch(showSpinner(false));
+  }, [dispatch, movieId]);
 
   useEffect(() => {
     getMovieDetails();
@@ -35,7 +33,7 @@ const MovieDetail = () => {
 
   return (
     <div className="movieDetail_container">
-      {spinnerState.showSpinner ? (
+      {spinner.showSpinner ? (
         <div className="movieDetail_spinner-container">
           <Spinner />
         </div>

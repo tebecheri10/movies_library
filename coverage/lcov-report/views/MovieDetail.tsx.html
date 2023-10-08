@@ -318,7 +318,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMovieExtraData } from "../features/movies/moviesSlice";
-import { setSpinnerValue } from "../features/spinner/spinnerSlice";
+import { showSpinner } from "../features/spinner/spinnerSlice";
 import { useParams } from "react-router-dom";
 import type { RootState } from "../app/store";
 &nbsp;
@@ -340,10 +340,10 @@ const MovieDetail = () =&gt; {
 &nbsp;
   const getMovieDetails = useCallback(async () =&gt; {
     //show spinner
-    dispatch(setSpinnerValue(true));
+    dispatch(showSpinner(true));
     await dispatch(getMovieExtraData(id) as any);
      //when the movies data is available , set spinner to false
-<span class="cstat-no" title="statement not covered" >    dispatch(setSpinnerValue(false));</span>
+<span class="cstat-no" title="statement not covered" >    dispatch(showSpinner(false));</span>
   }, [dispatch, id]);
 &nbsp;
   useEffect(() =&gt; {

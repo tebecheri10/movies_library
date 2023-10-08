@@ -12,11 +12,11 @@ export const spinnerSlice = createSlice({
   name: 'spinner',
   initialState,
   reducers: {
-    setSpinnerValue: (state, action)=>{
+    showSpinner: (state, action)=>{
         state.showSpinner = action.payload
     }
   }
 });
 
-export const { setSpinnerValue } = spinnerSlice.actions
+export const { showSpinner } = spinnerSlice.actions
 export default spinnerSlice.reducer;
